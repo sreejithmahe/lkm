@@ -3,7 +3,6 @@
  */
 package com.day02.activity02.controller;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,7 +34,9 @@ public class CarController {
 		List<CarDTO> carInfoDetails = carService.getCarDetails();
 		return new ResponseEntity<List<CarDTO>>(carInfoDetails,HttpStatus.OK);
 	}
-	@RequestMapping(value="/getCarinfo/{id}")
+
+	@RequestMapping(value="/getCarinfo/{id}",produces = { "application/json", "application/xml" }, 
+			method = RequestMethod.GET)
 	public Optional<Car> getCarDetails(@PathVariable Integer id) {
 		return carService.getCarDetailsById(id);
 	}

@@ -2,11 +2,11 @@
 
 
 //GET
-http://localhost:8081/car/getCarinfo/
+http://localhost:8082/car/getCarinfo/
 
 //GET By Id
 
-http://localhost:8081/car/getCarinfo/5
+http://localhost:8082/car/getCarinfo/5
 
 {
     "carName": "Maruti",
@@ -17,7 +17,7 @@ http://localhost:8081/car/getCarinfo/5
 
 
 //POST
-http://localhost:8081/car/addCarinfo
+http://localhost:8082/car/addCarinfo
 
 [
  {
@@ -34,15 +34,20 @@ http://localhost:8081/car/addCarinfo
 
 
 //UPDATE
-http://localhost:8081/car/updateCarinfo
+http://localhost:8082/car/updateCarinfo
 
-{
-    "carName": "Maruti",
-    "carId": 5,
-    "price": 397601.01,
-    "model": "2021"
+[
+ {
+"carName" :"Mahindra",
+"price":1100000.97,
+"model":"Scorpio"
+},
+ {
+"carName" :"Mahindra",
+"price":1400000.97,
+"model":"Xuv500"
 }
-
+]
 
 //DELETE
-http://localhost:8081/car/deleteCarinfo/1
+http://localhost:8082/car/deleteCarinfo/1
