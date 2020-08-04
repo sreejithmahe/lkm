@@ -19,11 +19,18 @@ http://localhost:8081/car/getCarinfo/5
 //POST
 http://localhost:8081/car/addCarinfo
 
-{
-        "carName": "mahindra ",
-        "price": 198767.01,
-        "model": "xuv"
+[
+ {
+"carName" :"Mahindra",
+"price":1100000.97,
+"model":"Scorpio"
+},
+ {
+"carName" :"Mahindra",
+"price":1400000.97,
+"model":"Xuv500"
 }
+]
 
 
 //UPDATE
