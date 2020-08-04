@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.day02.activity02.dto.CarDTO;
@@ -19,7 +20,7 @@ public class CarService {
 	CarRepository carRepository;
 	
 
-	
+	@Cacheable(value="carCacheSpace")
 	public List<CarDTO> getCarDetails() {
 		List<Car> carDAO = carRepository.findAll();
 		List<CarDTO> carDTO = new ArrayList<CarDTO>();
@@ -30,8 +31,9 @@ public class CarService {
 		}
 		return carDTO;
 	}
-	public Optional<Car> getCarDetailsById(Integer id) {
-		return carRepository.findById(id);
+	@Cacheable(value="carCacheSpace", key="#carId")
+	public Car getCarDetailsById(Integer carId) {
+		return carRepository.getCarInfoById(carId);
 	}
 
 	public List<CarDTO> updateCarDetails(List<Car> c) {

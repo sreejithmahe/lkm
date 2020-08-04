@@ -4,11 +4,13 @@
 package com.day02.activity02.controller;
 
 import java.util.List;
-import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,12 +39,15 @@ public class CarController {
 
 	@RequestMapping(value="/getCarinfo/{id}",produces = { "application/json", "application/xml" }, 
 			method = RequestMethod.GET)
-	public Optional<Car> getCarDetails(@PathVariable Integer id) {
+	public Car getCarDetails(@PathVariable Integer id) {
 		return carService.getCarDetailsById(id);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/addCarinfo")
-	public ResponseEntity<List<CarDTO>> addCarDetails(@RequestBody List<Car> car) {
+	public ResponseEntity<List<CarDTO>> addCarDetails(@Valid @RequestBody List<Car> car,Errors err) {
+		if(err.hasErrors()){
+			return new ResponseEntity<List<CarDTO>>(HttpStatus.BAD_REQUEST);
+		}
 		List<CarDTO> carInfoDetails = carService.updateCarDetails(car);
 		return new ResponseEntity<List<CarDTO>>(carInfoDetails,HttpStatus.OK);
 	}

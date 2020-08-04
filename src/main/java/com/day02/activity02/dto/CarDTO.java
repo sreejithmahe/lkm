@@ -3,12 +3,22 @@
  */
 package com.day02.activity02.dto;
 
+import java.io.Serializable;
+
+
+
 /**
  * @author sreejith.kizhakkayil
  *
  */
-public class CarDTO {
+public class CarDTO implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2670378897458673328L;
+	
+	
 	private String carName;
 	private Integer carId;
 	private double price;

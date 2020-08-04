@@ -3,11 +3,15 @@
  */
 package com.day02.activity02.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * @author sreejith.kizhakkayil
@@ -15,8 +19,13 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="CarDetails")
-public class Car {
+public class Car implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8311965669633268074L;
+	//@NotEmpty(message="{NotEmpty.cardetails.carName}") 
 	private String carName;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
