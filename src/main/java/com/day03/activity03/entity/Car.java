@@ -1,35 +1,42 @@
 /**
  * 
  */
-package com.day02.activity02.dto;
+package com.day03.activity03.entity;
 
 import java.io.Serializable;
 
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author sreejith.kizhakkayil
  *
  */
-public class CarDTO implements Serializable{
+@Entity
+@Table(name="CarDetails")
+public class Car implements Serializable{
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 2670378897458673328L;
-	
-	
+	private static final long serialVersionUID = -8311965669633268074L;
+
 	private String carName;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer carId;
 	private double price;
 	private String model;
 	
-	public CarDTO() {
+	public Car() {
 		super();
 	}
 
 	
-	public CarDTO(String carName, Integer carId, double price, String model) {
+	public Car(String carName, Integer carId, double price, String model) {
 		super();
 		this.carName = carName;
 		this.carId = carId;

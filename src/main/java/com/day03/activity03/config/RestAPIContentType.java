@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.day02.activity02.config;
+package com.day03.activity03.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;

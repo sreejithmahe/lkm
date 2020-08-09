@@ -1,4 +1,4 @@
-package com.day02.activity02;
+package com.day03.activity03;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,10 +11,10 @@ import org.springframework.core.io.ClassPathResource;
 
 @SpringBootApplication
 @EnableCaching 
-public class Activity2Application {
+public class Activity3Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Activity2Application.class, args);
+		SpringApplication.run(Activity3Application.class, args);
 	}
 	@Bean
 	public CacheManager cacheManager() {

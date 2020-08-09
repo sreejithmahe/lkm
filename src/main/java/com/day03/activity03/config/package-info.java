@@ -5,4 +5,4 @@
  * @author k_sre
  *
  */
-package com.day02.activity02.config;
+package com.day03.activity03.config;

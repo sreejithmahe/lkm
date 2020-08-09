@@ -5,4 +5,4 @@
  * @author sreejith.kizhakkayil
  *
  */
-package com.day02.activity02.entity;
+package com.day03.activity03.controller;

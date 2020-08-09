@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.day02.activity02.repository;
+package com.day03.activity03.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.day02.activity02.entity.Car;
+import com.day03.activity03.entity.Car;
 
 /**
  * @author sreejith.kizhakkayil

@@ -1,25 +1,22 @@
 /**
  * 
  */
-package com.day02.activity02.controller;
+package com.day03.activity03.controller;
 
 import java.util.List;
-
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.day02.activity02.dto.CarDTO;
-import com.day02.activity02.entity.Car;
-import com.day02.activity02.service.CarService;
+import com.day03.activity03.dto.CarDTO;
+import com.day03.activity03.entity.Car;
+import com.day03.activity03.service.CarService;
 
 /**
  * @author sreejith.kizhakkayil
@@ -44,10 +41,7 @@ public class CarController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/addCarinfo")
-	public ResponseEntity<List<CarDTO>> addCarDetails(@Valid @RequestBody List<Car> car,Errors err) {
-		if(err.hasErrors()){
-			return new ResponseEntity<List<CarDTO>>(HttpStatus.BAD_REQUEST);
-		}
+	public ResponseEntity<List<CarDTO>> addCarDetails(@RequestBody List<Car> car) {
 		List<CarDTO> carInfoDetails = carService.updateCarDetails(car);
 		return new ResponseEntity<List<CarDTO>>(carInfoDetails,HttpStatus.OK);
 	}
